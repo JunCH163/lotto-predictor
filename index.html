@@ -19,22 +19,11 @@
     <!-- 📢 즉시 랜덤 번호 생성 -->
     <section>
         <h2>🎲 즉시 랜덤 번호 생성</h2>
-        <p>랜덤추출에서 제외하고 싶은 번호는 체크박스에 체크하면 해당 번호가 제외됩니다.</p>
+        <p>랜덤 추출에서 제외하고 싶은 번호는 체크박스에 체크하면 해당 번호가 제외됩니다.</p>
 
-        <!-- 번호 제외 체크박스 -->
-        <h3>제외할 숫자 :</h3>
-        <div class="number-grid">
-            <script>
-                for (let i = 1; i <= 45; i++) {
-                    document.write(`
-                        <label class="checkbox-label">
-                            <input type="checkbox" class="exclude-number" value="${i}">
-                            ${i.toString().padStart(2, '0')}
-                        </label>
-                    `);
-                }
-            </script>
-        </div>
+        <!-- 제외할 숫자 -->
+        <h3>제외할 숫자 : <span id="excluded-count">0</span> / 39</h3>
+        <div class="number-grid"></div>
 
         <!-- 버튼 및 결과 출력 -->
         <button id="generate-random">🎲 랜덤 번호 생성</button>
@@ -44,4 +33,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

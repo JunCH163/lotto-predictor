@@ -33,30 +33,29 @@ button:hover {
     background-color: #0056b3;
 }
 
-.number-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    max-width: 400px;
-    margin: auto;
-}
-
-/* 체크박스 크기 키우기 */
+/* 체크박스 크기 조정 */
 .exclude-number {
-    width: 20px;  /* 너비 조정 */
-    height: 20px; /* 높이 조정 */
-    transform: scale(3); /* 크기 확대 */
-    margin-right: 5px; /* 간격 추가 */
+    width: 20px;
+    height: 20px;
+    transform: scale(1.5);
+    margin-right: 8px;
 }
 
-/* 숫자 정렬 및 스타일 개선 */
+/* 체크박스 및 숫자 정렬 */
 .checkbox-label {
     display: inline-flex;
     align-items: center;
-    font-size: 18px; /* 숫자 크기 조정 */
-    margin: 5px; /* 간격 조정 */
+    font-size: 18px;
+    margin: 5px;
 }
 
+/* 번호 정렬 (5줄씩 정렬) */
+.number-grid {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 10px;
+    margin-bottom: 15px;
+}
 
 .lotto-set {
     margin: 10px;

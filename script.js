@@ -3,7 +3,43 @@ const REPO_NAME = "lotto-predictor";
 const FILE_PATH = "lotto_predictions.json";
 const API_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/${FILE_PATH}`;
 
-// 🎯 회차 예측 번호 가져오기
+document.addEventListener("DOMContentLoaded", function () {
+    const numberGrid = document.querySelector(".number-grid");
+    const excludedCount = document.getElementById("excluded-count");
+
+    // 🎯 체크박스 동적 생성
+    for (let i = 1; i <= 45; i++) {
+        const label = document.createElement("label");
+        label.classList.add("checkbox-label");
+        label.innerHTML = `
+            <input type="checkbox" class="exclude-number" value="${i}">
+            ${i.toString().padStart(2, '0')}
+        `;
+        numberGrid.appendChild(label);
+    }
+
+    // 🎯 체크박스 선택 제한 (최대 39개)
+    const checkboxes = document.querySelectorAll(".exclude-number");
+    
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", function () {
+            const checkedCount = document.querySelectorAll(".exclude-number:checked").length;
+            
+            if (checkedCount > 39) {
+                this.checked = false; // 🚨 초과 시 체크 해제
+                alert("최대 39개의 번호만 제외할 수 있습니다!");
+            }
+
+            // ✔ 실시간 체크 개수 업데이트
+            excludedCount.textContent = checkedCount;
+        });
+    });
+
+    // 🎯 회차 예측 번호 가져오기
+    fetchLottoNumbers();
+});
+
+// 🎯 예측된 로또 번호 표시
 async function fetchLottoNumbers() {
     try {
         const response = await fetch(API_URL);
@@ -17,7 +53,6 @@ async function fetchLottoNumbers() {
     }
 }
 
-// 🎯 예측된 로또 번호 표시
 function displayLottoNumbers(data) {
     const resultsDiv = document.getElementById("lotto-predictions");
     resultsDiv.innerHTML = "";  
@@ -63,22 +98,3 @@ document.getElementById("generate-random").addEventListener("click", function ()
         randomResultsDiv.appendChild(setDiv);
     }
 });
-
-// 🎯 체크박스 선택 제한 (최대 39개까지만 가능)
-document.addEventListener("DOMContentLoaded", function () {
-    const checkboxes = document.querySelectorAll(".exclude-number");
-
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener("change", function () {
-            const checkedCount = document.querySelectorAll(".exclude-number:checked").length;
-            
-            if (checkedCount > 39) {
-                this.checked = false; // 🚨 초과 시 체크 해제
-                alert("최대 39개의 번호만 제외할 수 있습니다!");
-            }
-        });
-    });
-});
-
-// 🎯 페이지 로딩 시 예측 데이터 가져오기
-fetchLottoNumbers();
