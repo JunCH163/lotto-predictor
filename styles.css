@@ -41,12 +41,22 @@ button:hover {
     margin: auto;
 }
 
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
+/* 체크박스 크기 키우기 */
+.exclude-number {
+    width: 20px;  /* 너비 조정 */
+    height: 20px; /* 높이 조정 */
+    transform: scale(1.5); /* 크기 확대 */
+    margin-right: 5px; /* 간격 추가 */
 }
+
+/* 숫자 정렬 및 스타일 개선 */
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px; /* 숫자 크기 조정 */
+    margin: 5px; /* 간격 조정 */
+}
+
 
 .lotto-set {
     margin: 10px;

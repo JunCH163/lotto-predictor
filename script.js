@@ -17,6 +17,7 @@ async function fetchLottoNumbers() {
     }
 }
 
+// 🎯 예측된 로또 번호 표시
 function displayLottoNumbers(data) {
     const resultsDiv = document.getElementById("lotto-predictions");
     resultsDiv.innerHTML = "";  
@@ -61,6 +62,22 @@ document.getElementById("generate-random").addEventListener("click", function ()
         setDiv.innerHTML = `<strong>랜덤 세트 ${i}:</strong> <span>${randomNumbers.join(" ")}</span>`;
         randomResultsDiv.appendChild(setDiv);
     }
+});
+
+// 🎯 체크박스 선택 제한 (최대 39개까지만 가능)
+document.addEventListener("DOMContentLoaded", function () {
+    const checkboxes = document.querySelectorAll(".exclude-number");
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", function () {
+            const checkedCount = document.querySelectorAll(".exclude-number:checked").length;
+            
+            if (checkedCount > 39) {
+                this.checked = false; // 🚨 초과 시 체크 해제
+                alert("최대 39개의 번호만 제외할 수 있습니다!");
+            }
+        });
+    });
 });
 
 // 🎯 페이지 로딩 시 예측 데이터 가져오기
