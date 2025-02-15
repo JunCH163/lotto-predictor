@@ -9,23 +9,13 @@ h1 {
     color: #333;
 }
 
-h2 {
-    color: #444;
-}
-
 p {
     font-size: 14px;
     color: #666;
 }
 
-section {
-    background: white;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px;
+h3 {
+    margin-top: 20px;
 }
 
 button {
@@ -41,6 +31,21 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.number-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
 }
 
 .lotto-set {

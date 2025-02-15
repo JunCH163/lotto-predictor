@@ -40,6 +40,9 @@ function displayLottoNumbers(data) {
 
 // 🎲 즉시 랜덤 번호 생성
 document.getElementById("generate-random").addEventListener("click", function () {
+    const excludedNumbers = Array.from(document.querySelectorAll(".exclude-number:checked"))
+        .map(checkbox => parseInt(checkbox.value));
+
     const randomResultsDiv = document.getElementById("random-results");
     randomResultsDiv.innerHTML = "";  
 
@@ -47,7 +50,7 @@ document.getElementById("generate-random").addEventListener("click", function ()
         let randomNumbers = [];
         while (randomNumbers.length < 6) {
             let num = Math.floor(Math.random() * 45) + 1;
-            if (!randomNumbers.includes(num)) {
+            if (!randomNumbers.includes(num) && !excludedNumbers.includes(num)) {
                 randomNumbers.push(num);
             }
         }
