@@ -35,25 +35,25 @@ button:hover {
 
 /* 체크박스 크기 조정 */
 .exclude-number {
-    width: 20px;
-    height: 20px;
-    transform: scale(1.5);
-    margin-right: 8px;
+    width: 16px; /* 기존 20px -> 16px */
+    height: 16px; /* 기존 20px -> 16px */
+    transform: scale(1.2); /* 기존 1.5 -> 1.2로 축소 */
+    margin-right: 6px; /* 간격 조정 */
 }
 
 /* 체크박스 및 숫자 정렬 */
 .checkbox-label {
     display: inline-flex;
     align-items: center;
-    font-size: 18px;
-    margin: 5px;
+    font-size: 16px; /* 기존 18px -> 16px */
+    margin: 4px; /* 간격 조정 */
 }
 
 /* 번호 정렬 (5줄씩 정렬) */
 .number-grid {
     display: grid;
-    grid-template-columns: repeat(5, auto);
-    gap: 10px;
+    grid-template-columns: repeat(5, auto); /* 5개씩 배치 */
+    gap: 8px; /* 간격 줄이기 */
     margin-bottom: 15px;
 }
 
