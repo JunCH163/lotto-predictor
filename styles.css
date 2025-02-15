@@ -37,7 +37,6 @@ button:hover {
 .exclude-number {
     width: 16px; /* 기존 20px -> 16px */
     height: 16px; /* 기존 20px -> 16px */
-    transform: scale(1.2); /* 기존 1.5 -> 1.2로 축소 */
     margin-right: 6px; /* 간격 조정 */
 }
 
