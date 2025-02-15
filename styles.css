@@ -45,7 +45,7 @@ button:hover {
 .exclude-number {
     width: 20px;  /* 너비 조정 */
     height: 20px; /* 높이 조정 */
-    transform: scale(1.5); /* 크기 확대 */
+    transform: scale(3); /* 크기 확대 */
     margin-right: 5px; /* 간격 추가 */
 }
 
