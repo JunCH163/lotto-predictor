@@ -2,25 +2,60 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
+    background-color: #f8f8f8;
 }
 
 h1 {
     color: #333;
 }
 
-#lotto-results {
-    margin-top: 20px;
+h2 {
+    color: #444;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+
+section {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
 
 .lotto-set {
     margin: 10px;
     padding: 10px;
     border: 1px solid #ddd;
+    background: #fff;
     display: inline-block;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .lotto-set span {
     font-size: 20px;
     font-weight: bold;
+    color: #333;
     margin: 0 5px;
 }
