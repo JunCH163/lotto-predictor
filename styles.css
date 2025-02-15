@@ -35,27 +35,26 @@ button:hover {
 
 /* 체크박스 크기 조정 */
 .exclude-number {
-    width: 16px; /* 기존 20px -> 16px */
-    height: 16px; /* 기존 20px -> 16px */
-    margin-right: 6px; /* 간격 조정 */
+    width: 18px;  /* 크기를 너무 작게 하지 않고 적당한 크기로 */
+    height: 18px;
+    margin-right: 6px; /* 숫자와 간격 조정 */
 }
 
 /* 체크박스 및 숫자 정렬 */
 .checkbox-label {
     display: inline-flex;
     align-items: center;
-    font-size: 16px; /* 기존 18px -> 16px */
-    margin: 4px; /* 간격 조정 */
+    font-size: 16px; /* 숫자 폰트 크기 조정 */
+    margin: 4px;
 }
 
 /* 번호 정렬 (5줄씩 정렬) */
 .number-grid {
     display: grid;
     grid-template-columns: repeat(5, auto); /* 5개씩 배치 */
-    gap: 8px; /* 간격 줄이기 */
+    gap: 8px; /* 간격 조정 */
     margin-bottom: 15px;
 }
-
 .lotto-set {
     margin: 10px;
     padding: 10px;
