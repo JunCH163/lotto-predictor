@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+#lotto-results {
+    margin-top: 20px;
+}
+
+.lotto-set {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+
+.lotto-set span {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 5px;
+}
